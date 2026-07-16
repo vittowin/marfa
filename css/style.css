@@ -622,3 +622,135 @@ h2 {
   gap: 20px;
   flex-wrap: wrap;
 }
+.contacts-section {
+  padding: 100px 0;
+  background: #f7efe2;
+}
+
+.contacts-section .section-heading {
+  max-width: 760px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.contacts-section .section-heading h2 {
+  margin: 12px 0 16px;
+  color: #244b3c;
+}
+
+.contacts-section .section-heading p {
+  margin: 0;
+  color: #6b665e;
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.5fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.contacts-info,
+.contacts-map {
+  overflow: hidden;
+  border: 1px solid rgba(36, 75, 60, 0.12);
+  border-radius: 26px;
+  background: #fffdf9;
+  box-shadow: 0 18px 50px rgba(58, 45, 30, 0.08);
+}
+
+.contacts-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 38px;
+}
+
+.contact-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  display: flex;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #244b3c;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.contact-item h3 {
+  margin: 0 0 10px;
+  color: #244b3c;
+  font-size: 24px;
+}
+
+.contact-item p {
+  margin: 0;
+  color: #68645d;
+  line-height: 1.6;
+}
+
+.contact-actions {
+  margin-top: 40px;
+}
+
+.contact-actions .button {
+  width: 100%;
+  text-align: center;
+}
+
+.contacts-map iframe {
+  display: block;
+  width: 100%;
+  min-height: 460px;
+  border: 0;
+}
+
+@media (max-width: 850px) {
+  .contacts-section {
+    padding: 70px 0;
+  }
+
+  .contacts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contacts-info {
+    padding: 28px;
+  }
+
+  .contacts-map iframe {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 520px) {
+  .contacts-section {
+    padding: 55px 0;
+  }
+
+  .contacts-section .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .contacts-info {
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .contacts-map {
+    border-radius: 20px;
+  }
+
+  .contacts-map iframe {
+    height: 340px;
+    min-height: 340px;
+  }
+}
