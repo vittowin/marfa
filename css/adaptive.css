@@ -1,0 +1,164 @@
+
+@media (max-width: 1050px) {
+  .main-nav {
+    display: none;
+  }
+
+  .header-phone {
+    display: none;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr 430px;
+    gap: 30px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 850px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .header-actions .button {
+    display: none;
+  }
+
+  .mobile-nav {
+    position: absolute;
+    top: 82px;
+    right: 0;
+    left: 0;
+    display: grid;
+    gap: 8px;
+    padding: 17px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: var(--cream);
+    box-shadow: var(--shadow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: 0.25s;
+  }
+
+  .mobile-nav.open {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .mobile-nav a {
+    padding: 11px;
+    border-radius: 12px;
+    font-weight: 800;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    min-height: 520px;
+  }
+
+  .hero-image-placeholder {
+    right: 50%;
+    transform: translateX(50%) rotate(2deg);
+  }
+
+  .hero-note--top {
+    left: 4%;
+  }
+
+  .hero-note--bottom {
+    right: 4%;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .promo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .section {
+    padding: 66px 0;
+  }
+
+  .hero-grid {
+    min-height: auto;
+    padding: 48px 0 58px;
+  }
+
+  .hero h1 {
+    font-size: clamp(46px, 14vw, 64px);
+    letter-spacing: -2px;
+  }
+
+  .hero-copy {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    display: grid;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .hero-facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-visual {
+    min-height: 425px;
+  }
+
+  .hero-image-placeholder {
+    width: 92%;
+    height: 380px;
+    border-width: 7px;
+  }
+
+  .hero-note {
+    padding: 10px 12px;
+  }
+
+  .hero-note strong {
+    font-size: 13px;
+  }
+
+  .hero-note span {
+    font-size: 9px;
+  }
+
+  .trust-grid,
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-copy strong {
+    font-size: 17px;
+  }
+
+  .logo-copy small {
+    display: none;
+  }
+
+  .footer-grid {
+    flex-direction: column;
+  }
+}

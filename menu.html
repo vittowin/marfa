@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#284536">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/adaptive.css">
+<link rel="stylesheet" href="css/animation.css">
+
+  <link rel="stylesheet" href="css/menu.css">
+  <meta name="description" content="Меню пирожковой «Марфа и медведь»: пирожки, хлеб, большие пироги и десерты.">
+  <title>Меню | Марфа и медведь</title>
+</head>
+<body>
+  
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">
+      <span class="logo-mark"><span>М</span></span>
+      <span class="logo-copy">
+        <strong>Марфа и медведь</strong>
+        <small>Пирожковая в Петербурге</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Основная навигация">
+      <a href="index.html">Главная</a>
+      <a href="menu.html">Меню</a>
+      <a href="delivery.html">Доставка</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-phone" href="tel:+79112875453">+7 911 287-54-53</a>
+      <a class="button button--green" href="menu.html">Заказать</a>
+      <button class="menu-toggle" type="button" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Мобильная навигация">
+      <a href="index.html">Главная</a>
+      <a href="menu.html">Меню</a>
+      <a href="delivery.html">Доставка</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Меню</span>
+        <h1>Свежая выпечка на каждый день</h1>
+        <p>Добавьте позиции в корзину. Сайт сформирует предварительный заказ и откроет его в WhatsApp.</p>
+      </div>
+    </section>
+
+    <section class="section section--paper">
+      <div class="container">
+        <div class="menu-toolbar">
+          <div class="filters">
+            <button class="filter-button active" data-filter="all">Всё</button>
+            <button class="filter-button" data-filter="savory">Сытные</button>
+            <button class="filter-button" data-filter="sweet">Сладкие</button>
+            <button class="filter-button" data-filter="bread">Хлеб</button>
+            <button class="filter-button" data-filter="large">Большие пироги</button>
+            <button class="filter-button" data-filter="dessert">Десерты</button>
+          </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <button class="cart-fab" id="cartOpen" type="button">
+    Корзина <span class="cart-count" id="cartCount">0</span>
+  </button>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <aside class="cart-panel" id="cartPanel" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Ваш заказ</h3>
+      <button class="cart-close" id="cartClose" type="button" aria-label="Закрыть корзину">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-total"><span>Итого</span><span id="cartTotal">0 ₽</span></div>
+    <a class="cart-order disabled" id="cartOrder" href="#" target="_blank" rel="noopener">Отправить заказ в WhatsApp</a>
+  </aside>
+
+  
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <span>© 2026 «Марфа и медведь»</span>
+    <span>Санкт-Петербург, переулок Антоненко, 5</span>
+  </div>
+</footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/menu-data.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>
