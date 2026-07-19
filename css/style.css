@@ -855,7 +855,11 @@ h2 {
   .hero-note--bottom {
     right: 8px;
   }
-}.map-card--embedded {
+}
+
+/* Яндекс-карта на странице контактов */
+
+.map-card--embedded {
   min-height: 340px;
   padding: 0;
   overflow: hidden;
