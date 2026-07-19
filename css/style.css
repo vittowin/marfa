@@ -739,14 +739,7 @@ h2 {
 }.hero-image-placeholder {
   overflow: hidden;
 }
-
-.hero-photo {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}.fact-icon {
+.fact-icon {
   display: inline-flex;
   width: 38px;
   height: 38px;
@@ -857,14 +850,29 @@ h2 {
   }
 }
 
-/* Яндекс-карта на странице контактов */
+/* Контакты */
 
 .contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
   align-items: stretch;
 }
 
+.contact-card,
 .map-card--embedded {
   min-height: 340px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.contact-card {
+  padding: 28px;
+}
+
+.map-card--embedded {
   padding: 0;
   overflow: hidden;
 }
@@ -872,6 +880,18 @@ h2 {
 .map-card--embedded iframe {
   display: block;
   width: 100%;
-  height: 340px;
+  height: 100%;
+  min-height: 340px;
   border: 0;
+}
+
+@media (max-width: 850px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-card--embedded,
+  .map-card--embedded iframe {
+    min-height: 360px;
+  }
 }
