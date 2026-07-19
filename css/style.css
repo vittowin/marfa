@@ -810,4 +810,12 @@ h2 {
   .fact-icon {
     font-size: 25px;
   }
+.contact-actions {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-actions .button {
+    display: inline-flex;
 }
