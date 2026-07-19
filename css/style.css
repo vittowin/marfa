@@ -859,10 +859,14 @@ h2 {
 
 /* Яндекс-карта на странице контактов */
 
+.contact-grid {
+  align-items: stretch;
+}
+
 .map-card--embedded {
-  min-height: 340px;
   padding: 0;
   overflow: hidden;
+  min-height: 100%;
 }
 
 .map-card--embedded iframe {
