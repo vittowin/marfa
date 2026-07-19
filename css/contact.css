@@ -41,7 +41,7 @@
 .contact-item strong,
 .contact-item a {
     color: var(--text);
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     line-height: 1.4;
     margin: 0;
@@ -124,4 +124,10 @@
   .map-card--embedded {
     min-height: 360px;
   }
+}
+.contact-card h2 {
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 28px;
 }
