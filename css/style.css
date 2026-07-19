@@ -415,28 +415,6 @@ h2 {
   min-height: 550px;
 }
 
-.hero-image-placeholder {
-    position: relative;
-    overflow: hidden;
-
-    width: 430px;
-    aspect-ratio: 1 / 1.15;
-
-    border-radius: 42% 42% 18% 18% / 18% 18% 12% 12%;
-
-    border: 8px solid #d8d4c8;
-    background: #244b3c;
-}
-.hero-photo {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-
-    display: block;
-}
-
 .hero-note {
   position: absolute;
   z-index: 5;
@@ -780,4 +758,101 @@ h2 {
   color: #ffffff;
   font-size: 18px;
   line-height: 1;
+}.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px;
+  isolation: isolate;
+}
+
+.hero-photo-frame {
+  position: relative;
+  width: min(100%, 430px);
+  aspect-ratio: 0.86;
+  overflow: hidden;
+
+  border: 8px solid rgba(245, 241, 229, 0.95);
+  border-radius: 44% 44% 18% 18% / 20% 20% 12% 12%;
+
+  background: #244b3c;
+  box-shadow:
+    0 28px 60px rgba(37, 53, 44, 0.18),
+    0 8px 18px rgba(37, 53, 44, 0.12);
+
+  transform: rotate(1deg);
+}
+
+.hero-photo-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.06),
+      rgba(20, 45, 35, 0.08)
+    );
+}
+
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.03);
+}
+
+.hero-note {
+  position: absolute;
+  z-index: 2;
+}
+
+.hero-note--top {
+  top: 18px;
+  left: -22px;
+}
+
+.hero-note--bottom {
+  right: -10px;
+  bottom: 10px;
+}
+
+@media (max-width: 900px) {
+  .hero-visual {
+    min-height: auto;
+    padding-top: 30px;
+  }
+
+  .hero-photo-frame {
+    width: min(88vw, 430px);
+  }
+
+  .hero-note--top {
+    top: 0;
+    left: 0;
+  }
+
+  .hero-note--bottom {
+    right: 0;
+    bottom: -12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-photo-frame {
+    width: 100%;
+    border-width: 6px;
+  }
+
+  .hero-note--top {
+    left: 8px;
+  }
+
+  .hero-note--bottom {
+    right: 8px;
+  }
 }
