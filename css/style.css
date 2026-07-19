@@ -382,22 +382,6 @@ h2 {
   align-items: center;
 }
 
-.fact-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  width: auto;
-  height: auto;
-  margin-top: -2px;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  color: inherit;
-  font-size: 28px;
-  line-height: 1;
-}
-
 .hero-fact strong,
 .hero-fact span {
   display: block;
@@ -974,4 +958,20 @@ h2 {
   .hero-photo-frame {
     width: min(100%, 360px);
   }
+}.fact-icon {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: inherit;
+  font-size: 28px;
+  line-height: 1;
 }
