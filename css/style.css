@@ -416,20 +416,25 @@ h2 {
 }
 
 .hero-image-placeholder {
-  position: absolute;
-  top: 30px;
-  right: 0;
-  width: min(470px, 94%);
-  height: 490px;
-  overflow: hidden;
-  border: 10px solid rgba(255, 249, 239, 0.8);
-  border-radius: 45% 45% 23% 23% / 33% 33% 20% 20%;
-  background:
-    linear-gradient(rgba(40, 69, 54, 0.35), rgba(40, 69, 54, 0.35)),
-    url("../images/hero/hero-main.jpg") center/cover no-repeat,
-    linear-gradient(155deg, #536f5c, #2d4939 48%, #1c3026);
-  box-shadow: var(--shadow);
-  transform: rotate(2deg);
+    position: relative;
+    overflow: hidden;
+
+    width: 430px;
+    aspect-ratio: 1 / 1.15;
+
+    border-radius: 42% 42% 18% 18% / 18% 18% 12% 12%;
+
+    border: 8px solid #d8d4c8;
+    background: #244b3c;
+}
+.hero-photo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
 }
 
 .hero-note {
