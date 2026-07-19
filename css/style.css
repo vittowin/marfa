@@ -386,9 +386,16 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  margin-top: -2px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
   font-size: 28px;
   line-height: 1;
-  margin-top: -2px; /* немного выровняет по тексту */
 }
 
 .hero-fact strong,
@@ -735,19 +742,7 @@ h2 {
 }.hero-image-placeholder {
   overflow: hidden;
 }
-.fact-icon {
-  display: inline-flex;
-  width: 38px;
-  height: 38px;
-  flex: 0 0 38px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: #244b3c;
-  color: #ffffff;
-  font-size: 18px;
-  line-height: 1;
-}.hero-visual {
+.hero-visual {
   position: relative;
   display: flex;
   align-items: center;
