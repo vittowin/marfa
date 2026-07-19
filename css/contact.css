@@ -16,28 +16,35 @@
 }
 
 .contact-list {
-  display: grid;
-  gap: 18px;
-  margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 28px;
 }
 
-.contact-item span,
-.contact-item strong,
-.contact-item a {
-  display: block;
+.contact-item {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    align-items: start;
+    column-gap: 18px;
 }
 
 .contact-item span {
-  color: var(--muted);
-  font-size: 11px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+    color: #8b8379;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin: 0;
 }
 
 .contact-item strong,
 .contact-item a {
-  margin-top: 5px;
-  font-size: 18px;
+    color: var(--text);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
 }
 
 .map-card {
