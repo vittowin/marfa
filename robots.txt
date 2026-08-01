@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vittowin.github.io/marfa/sitemap.xml

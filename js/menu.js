@@ -4,40 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const filters = document.querySelectorAll(".filter-button");
   const cakeNote = document.getElementById("cakeNote");
 
-  if (!grid || !window.MARFA_PRODUCTS) return;
-
-  const formatWeight = (weight) => (
-    Number.isFinite(weight) ? `${weight.toLocaleString("ru-RU")} г` : ""
-  );
+  if (!grid) return;
 
   const renderProducts = (filter = "pies") => {
-    const products = window.MARFA_PRODUCTS.filter(
-      (product) => filter === "all" || product.category === filter
-    );
-
-    grid.innerHTML = products.map((product) => `
-      <article class="product-card" data-id="${product.id}">
-        ${product.image ? `
-          <div class="product-image">
-            <img src="${product.image}" alt="${product.name}" width="900" height="900" loading="lazy">
-          </div>
-        ` : ""}
-        <div class="product-body">
-          <div class="product-topline">
-            <span class="product-tag product-tag--inline">${product.categoryLabel}</span>
-            ${product.weight ? `<span class="product-weight">${formatWeight(product.weight)}</span>` : ""}
-          </div>
-          <h3>${product.name}</h3>
-          ${product.description ? `<p>${product.description}</p>` : ""}
-          <div class="product-bottom">
-            <span class="product-price">${product.price.toLocaleString("ru-RU")} ₽</span>
-            <div class="product-cart-control" data-cart-control="${product.id}">
-              <button class="add-to-cart" type="button" data-cart-add="${product.id}">В корзину</button>
-            </div>
-          </div>
-        </div>
-      </article>
-    `).join("");
+    grid.querySelectorAll(".product-card").forEach((card) => {
+      card.hidden = filter !== "all" && card.dataset.category !== filter;
+    });
 
     if (cakeNote) cakeNote.hidden = filter !== "cakes";
     document.dispatchEvent(new CustomEvent("marfa:products-rendered"));

@@ -614,53 +614,6 @@ h2 {
   font-size: 22px;
 }
 
-/* Промо-карточки */
-
-.promo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.promo-card {
-  min-height: 260px;
-  padding: 28px;
-  border-radius: 26px;
-  color: #ffffff;
-  background: var(--green);
-}
-
-.promo-card:nth-child(2) {
-  background: var(--orange);
-}
-
-.promo-card:nth-child(3) {
-  background: #6f4934;
-}
-
-.promo-card h3 {
-  margin: 42px 0 0;
-  font-size: 30px;
-  line-height: 1.05;
-}
-
-.promo-card p {
-  margin: 12px 0 0;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 14px;
-  line-height: 1.55;
-}
-
-.status {
-  display: inline-flex;
-  padding: 7px 10px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.18);
-  font-size: 10px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
 /* Заголовки внутренних страниц */
 
 .page-hero {
@@ -796,8 +749,7 @@ h2 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .card-grid,
-  .promo-grid {
+  .card-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -810,12 +762,14 @@ h2 {
   .fact-icon {
     font-size: 25px;
   }
+}
+
 .contact-actions {
-    margin-top: 28px;
-    display: flex;
-    justify-content: center;
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
 }
 
 .contact-actions .button {
-    display: inline-flex;
+  display: inline-flex;
 }

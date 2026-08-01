@@ -106,6 +106,10 @@
   transition: 0.25s;
 }
 
+.product-card[hidden] {
+  display: none;
+}
+
 .product-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 48px rgba(64, 49, 35, 0.13);
