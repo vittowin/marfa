@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Number.isFinite(weight) ? `${weight.toLocaleString("ru-RU")} г` : ""
   );
 
-  const renderProducts = (filter = "all") => {
+  const renderProducts = (filter = "pies") => {
     const products = window.MARFA_PRODUCTS.filter(
       (product) => filter === "all" || product.category === filter
     );
