@@ -134,8 +134,7 @@ const cakes = createCatalogSection([
   ["cake-esterhazy", "Торт «Эстерхази»", 600, 1450, "Миндальные коржи, заварной крем «Эстерхази», миндальные лепестки, белый и тёмный гляссаж.", "images/products/cakes/cake-esterhazy.jpg"],
   ["cake-three-chocolates", "Торт «Три шоколада»", 800, 1900, "Шоколадно-шифоновый бисквит и суфле из белого, молочного и тёмного шоколада.", "images/products/cakes/cake-three-chocolates.jpg"],
   ["cake-red-velvet", "Торт «Красный бархат»", 600, 1800, "Коржи «Красный бархат», творожный крем и ягодное желе в ассортименте.", "images/products/cakes/cake-red-velvet.jpg"],
-  ["cake-lemon", "Торт «Лимонный»", 500, 990, "Ванильный бисквит, сливочно-лимонный крем и лимонная пропитка.", "images/products/cakes/cake-lemon.jpg"],
-  ["cake-greeting-medallion", "Поздравительная надпись на торт", null, 300, "Шоколадный медальончик с поздравительной надписью для любого торта."]
+  ["cake-lemon", "Торт «Лимонный»", 500, 990, "Ванильный бисквит, сливочно-лимонный крем и лимонная пропитка.", "images/products/cakes/cake-lemon.jpg"]
 ], {
   category: "cakes",
   categoryLabel: "Торт",

@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.getElementById("productsGrid");
   const filters = document.querySelectorAll(".filter-button");
+  const cakeNote = document.getElementById("cakeNote");
 
   if (!grid || !window.MARFA_PRODUCTS) return;
 
@@ -35,6 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </article>
     `).join("");
+
+    if (cakeNote) cakeNote.hidden = filter !== "cakes";
   };
 
   filters.forEach((button) => {

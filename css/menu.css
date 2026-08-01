@@ -13,6 +13,26 @@
   gap: 9px;
 }
 
+.cake-note {
+  margin: -10px 0 24px;
+  padding: 15px 18px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--orange);
+  border-radius: 14px;
+  color: var(--muted);
+  background: var(--sand);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cake-note strong {
+  color: var(--green);
+}
+
+.cake-note[hidden] {
+  display: none;
+}
+
 .filter-button {
   min-height: 42px;
   padding: 0 16px;
