@@ -1,111 +1,151 @@
+const createCatalogSection = (items, defaults) => items.map((item) => {
+  const [id, name, weight, price, description] = item;
+
+  return {
+    ...defaults,
+    id,
+    name,
+    weight,
+    price,
+    description: description || defaults.description
+  };
+});
+
+const wheatPies = createCatalogSection([
+  ["wheat-cabbage-egg", "Пирожок с капустой и яйцом", 85, 70],
+  ["wheat-apple", "Пирожок с яблоком", 80, 70],
+  ["wheat-cottage-cheese", "Пирожок с творогом", 80, 70],
+  ["wheat-condensed-milk", "Пирожок со сгущёнкой", 80, 70],
+  ["wheat-strawberry", "Пирожок с клубникой", 70, 70],
+  ["wheat-cherry", "Пирожок с вишней", 70, 70],
+  ["wheat-blueberry", "Пирожок с черникой", 70, 70],
+  ["wheat-raspberry", "Пирожок с малиной", 70, 70],
+  ["wheat-lingonberry", "Пирожок с брусникой", 70, 70],
+  ["wheat-apricot", "Пирожок с абрикосом", 70, 70],
+  ["wheat-poppy-bun", "Булочка с маком", 80, 70],
+  ["wheat-cinnamon-bun", "Булочка с корицей", 80, 65],
+  ["wheat-rice-egg", "Пирожок с рисом и яйцом", 90, 70],
+  ["wheat-potato", "Пирожок с картошкой", 90, 70],
+  ["wheat-sausage", "Сосиска в тесте", 90, 80],
+  ["wheat-beef-onion", "Пирожок с говядиной и жареным луком", 80, 80],
+  ["wheat-ham-cheese", "Пирожок с ветчиной и сыром", 80, 80],
+  ["wheat-lemon", "Пирожок с лимоном", 80, 70],
+  ["wheat-green-onion-egg", "Пирожок с зелёным луком и яйцом", 75, 70],
+  ["wheat-chicken-onion", "Пирожок с курицей и жареным луком", 80, 80],
+  ["wheat-liver-onion", "Пирожок с говяжьей печенью и жареным луком", 80, 80],
+  ["wheat-carrot-egg", "Пирожок с морковью и яйцом", 90, 70],
+  ["wheat-beef-cabbage", "Пирожок с мясом и капустой", 90, 70]
+], {
+  category: "pies",
+  categoryLabel: "Пшеничная мука",
+  description: "Пирожок из пшеничной муки."
+});
+
+const multigrainPies = createCatalogSection([
+  ["multigrain-cabbage", "Пирожок с капустой", 85, 70],
+  ["multigrain-apple", "Пирожок с яблоком", 80, 70],
+  ["multigrain-blueberry", "Пирожок с черникой", 70, 70],
+  ["multigrain-green-onion-rice", "Пирожок с зелёным луком и рисом", 70, 70],
+  ["multigrain-potato", "Пирожок с картошкой", 85, 70],
+  ["multigrain-buckwheat-onion", "Пирожок с гречей и жареным луком", 85, 70],
+  ["multigrain-beef-onion", "Пирожок с говядиной и жареным луком", 80, 80],
+  ["multigrain-ham-cheese", "Пирожок с ветчиной и сыром", 80, 80],
+  ["multigrain-apple-cherry", "Пирожок с яблоком и вишней", 80, 70],
+  ["multigrain-cottage-cheese", "Пирожок с творогом", 80, 70],
+  ["multigrain-vegetable", "Пирожок с овощами", 80, 70],
+  ["multigrain-carrot-apple", "Пирожок с морковью и яблоком", 85, 70],
+  ["multigrain-rice-lentils", "Пирожок с рисом и чечевицей", 85, 70]
+], {
+  category: "pies",
+  categoryLabel: "Многозерновая мука",
+  description: "Пирожок из многозерновой муки."
+});
+
+const breads = createCatalogSection([
+  ["bread-wheat-rye-bran", "Хлеб пшенично-ржаной с отрубями", 280, 75],
+  ["bread-gray", "Хлеб серый", 250, 75],
+  ["bread-white-loaf", "Хлеб белый, буханка", 230, 75],
+  ["bread-white-round", "Хлеб белый круглый", 400, 75],
+  ["bread-white-round-small", "Хлеб белый круглый маленький", 180, 45],
+  ["bread-rye-yeast-free", "Хлеб ржаной бездрожжевой", 280, 80],
+  ["bread-country-yeast-free", "Хлеб деревенский бездрожжевой", 280, 80],
+  ["bread-wheat-sesame", "Хлеб пшеничный с кунжутом", 280, 75],
+  ["bread-vienna-milk", "Хлеб венский молочный", 250, 80],
+  ["bread-darnitsky", "Хлеб Дарницкий", 250, 80],
+  ["bread-ciabatta", "Чиабатта пшеничная", 200, 80],
+  ["bread-onion-baguette", "Багет луковый", 250, 80],
+  ["bread-carrot-beet-garlic-baguette", "Багет морковно-свекольный с чесноком", 250, 80],
+  ["bread-wheat-baton", "Батон пшеничный", 400, 80]
+], {
+  category: "bread",
+  categoryLabel: "Хлеб",
+  description: "Свежий хлеб собственного производства."
+});
+
+const savoryPies = createCatalogSection([
+  ["savory-pie-cabbage-egg", "Пирог с капустой и яйцом", 1250, 900],
+  ["savory-pie-cabbage", "Пирог с капустой", 1250, 900],
+  ["savory-pie-potato", "Пирог с картошкой", 1250, 900],
+  ["savory-pie-rice-egg", "Пирог с рисом и яйцом", 1250, 900],
+  ["savory-pie-green-onion-egg", "Пирог с зелёным луком и яйцом", 1150, 940],
+  ["savory-pie-green-onion-rice", "Пирог с зелёным луком и рисом", 1150, 940],
+  ["savory-pie-vegetable", "Пирог с овощами", 1200, 940],
+  ["savory-pie-beef-cabbage", "Пирог с мясом и капустой", 1250, 990],
+  ["savory-pie-ham-cheese", "Пирог с ветчиной и сыром", 1150, 990],
+  ["savory-pie-liver", "Пирог с говяжьей печенью", 1150, 990],
+  ["savory-pie-chicken", "Пирог с курицей", 1150, 1100],
+  ["savory-pie-beef", "Пирог с говядиной", 1150, 1200]
+], {
+  category: "savory-pies",
+  categoryLabel: "Сытный пирог",
+  description: "На заказ. Круглая форма D30 см; коробка включена в стоимость."
+});
+
+const sweetPies = createCatalogSection([
+  ["sweet-pie-apple", "Пирог с яблоком", 1300, 950],
+  ["sweet-pie-apple-lingonberry", "Пирог с яблоком и брусникой", 1300, 950],
+  ["sweet-pie-apple-lemon", "Пирог с яблоком и лимоном", 1300, 970],
+  ["sweet-pie-lemon", "Пирог с лимоном", 1100, 990],
+  ["sweet-pie-apricot", "Пирог с абрикосом", 1100, 990],
+  ["sweet-pie-raspberry", "Пирог с малиной", 1100, 990],
+  ["sweet-pie-curd-jam-large", "Пирог творожный с вареньем", 1300, 950, "Начинка на выбор: черника, малина, вишня, брусника, абрикос, клубника, киви, персик, чёрная смородина, мак или изюм."],
+  ["sweet-pie-curd-jam-small", "Пирог творожный с вареньем", 600, 650, "Начинка на выбор: черника, малина, вишня, брусника, абрикос, клубника, киви, персик, чёрная смородина, мак или изюм."],
+  ["sweet-pie-curd-banana-pineapple", "Пирог творожный с бананом или ананасом", 800, 700, "Песочное тесто; начинка с бананом или ананасом на выбор."]
+], {
+  category: "sweet-pies",
+  categoryLabel: "Сладкий пирог",
+  description: "На заказ. Круглая форма D28 или D16 см; коробка включена в стоимость."
+});
+
+const cakes = createCatalogSection([
+  ["cake-kids", "Торт «Детский»", 500, 1100, "Ванильный бисквит, сливки, сахарная пудра."],
+  ["cake-tenderness", "Торт «Нежность»", 500, 990, "Ванильный бисквит, клубничное варенье, сливки."],
+  ["cake-creme-brulee", "Торт «Крем-брюле»", 600, 1100, "Ванильный бисквит, крем-брюле, шоколад и какао."],
+  ["cake-prague", "Торт «Прага» по ГОСТу", 800, 1100, "Шоколадный бисквит, крем «Прага» по ГОСТу, коньячная пропитка и абрикосовая прослойка."],
+  ["cake-tiramisu", "Торт «Тирамису»", 600, 1250, "Шоколадный бисквит, мокка-ром, сливки, маскарпоне, какао и шоколад."],
+  ["cake-yogurt", "Торт «Йогуртовый»", 800, 1250, "Ванильный бисквит, йогуртовый крем «клубника-земляника» и сливки."],
+  ["cake-napoleon", "Торт «Наполеон»", 800, 1250, "Слоёное тесто и заварной крем."],
+  ["cake-blackcurrant", "Торт «Смородиновый»", 600, 1200, "Ванильный бисквит, смородиновое компоте, сливочно-творожный крем; декор из смородинового геля, марципана и сливочного крема."],
+  ["cake-birds-milk", "Торт «Птичье молоко»", 600, 1450, "Шоколадный бисквит, суфле и шоколадная глазурь."],
+  ["cake-tulips", "Торт «Тюльпаны»", 500, 1050, "Ванильный бисквит, сливочный крем, сгущённое молоко и меренга."],
+  ["cake-bento", "Торт «Бенто»", 250, 750, "Ванильно-шоколадные бисквиты; банановый, клубничный или фисташковый крем на выбор."],
+  ["cake-berry-basket", "Торт «Ягодное лукошко»", 1100, 1550, "Ванильный бисквит, заварной крем «Дипломат», малина, красная и чёрная смородина, желе."],
+  ["cake-esterhazy", "Торт «Эстерхази»", 600, 1450, "Миндальные коржи, заварной крем «Эстерхази», миндальные лепестки, белый и тёмный гляссаж."],
+  ["cake-three-chocolates", "Торт «Три шоколада»", 800, 1900, "Шоколадно-шифоновый бисквит и суфле из белого, молочного и тёмного шоколада."],
+  ["cake-red-velvet", "Торт «Красный бархат»", 600, 1800, "Коржи «Красный бархат», творожный крем и ягодное желе в ассортименте."],
+  ["cake-lemon", "Торт «Лимонный»", 500, 990, "Ванильный бисквит, сливочно-лимонный крем и лимонная пропитка."],
+  ["cake-greeting-medallion", "Поздравительная надпись на торт", null, 300, "Шоколадный медальончик с поздравительной надписью для любого торта."]
+], {
+  category: "cakes",
+  categoryLabel: "Торт",
+  description: ""
+});
 
 window.MARFA_PRODUCTS = [
-  {
-    id: "meat-pie",
-    name: "Пирожок с мясом",
-    category: "savory",
-    categoryLabel: "Сытный",
-    description: "Начинка из говядины.",
-    price: 58,
-    image: "images/products/meat-pie.jpg"
-  },
-  {
-    id: "chicken-pie",
-    name: "Пирожок с курицей",
-    category: "savory",
-    categoryLabel: "Сытный",
-    description: "Куриное мясо, жареный лук и укроп.",
-    price: 56,
-    image: "images/products/chicken-pie.jpg"
-  },
-  {
-    id: "potato-pie",
-    name: "Пирожок с картошкой",
-    category: "savory",
-    categoryLabel: "Сытный",
-    description: "Классическая домашняя начинка.",
-    price: 46,
-    image: "images/products/potato-pie.jpg"
-  },
-  {
-    id: "cabbage-egg-pie",
-    name: "Пирожок с капустой и яйцом",
-    category: "savory",
-    categoryLabel: "Сытный",
-    description: "Традиционная несладкая начинка.",
-    price: 46,
-    image: "images/products/cabbage-egg-pie.jpg"
-  },
-  {
-    id: "lingonberry-pie",
-    name: "Пирожок с брусникой",
-    category: "sweet",
-    categoryLabel: "Сладкий",
-    description: "Ягодная начинка с лёгкой кислинкой.",
-    price: 48,
-    image: "images/products/lingonberry-pie.jpg"
-  },
-  {
-    id: "cherry-pie",
-    name: "Пирожок с вишней",
-    category: "sweet",
-    categoryLabel: "Сладкий",
-    description: "Мягкое тесто и яркая ягодная начинка.",
-    price: 46,
-    image: "images/products/cherry-pie.jpg"
-  },
-  {
-    id: "cinnamon-bun",
-    name: "Булочка с корицей",
-    category: "sweet",
-    categoryLabel: "К чаю",
-    description: "Ароматная выпечка к чаю или кофе.",
-    price: 42,
-    image: "images/products/cinnamon-bun.jpg"
-  },
-  {
-    id: "rye-bread",
-    name: "Хлеб ржаной бездрожжевой",
-    category: "bread",
-    categoryLabel: "Хлеб",
-    description: "Хлеб для ежедневного стола.",
-    price: 55,
-    image: "images/products/rye-bread.jpg"
-  },
-  {
-    id: "wheat-bread",
-    name: "Хлеб пшеничный с кунжутом",
-    category: "bread",
-    categoryLabel: "Хлеб",
-    description: "Пшеничный хлеб с кунжутной посыпкой.",
-    price: 56,
-    image: "images/products/wheat-bread.jpg"
-  },
-  {
-    id: "large-chicken-pie",
-    name: "Большой пирог с курицей",
-    category: "large",
-    categoryLabel: "Большой пирог",
-    description: "Сытный пирог для семьи или офиса.",
-    price: 900,
-    image: "images/products/large-chicken-pie.jpg"
-  },
-  {
-    id: "large-meat-pie",
-    name: "Большой пирог с мясом",
-    category: "large",
-    categoryLabel: "Большой пирог",
-    description: "Большой пирог с начинкой из говядины.",
-    price: 1080,
-    image: "images/products/large-meat-pie.jpg"
-  },
-  {
-    id: "potato-cake",
-    name: "Пирожное «Картошка»",
-    category: "dessert",
-    categoryLabel: "Десерт",
-    description: "Знакомый десерт к горячему напитку.",
-    price: 80,
-    image: "images/products/potato-cake.jpg"
-  }
+  ...wheatPies,
+  ...multigrainPies,
+  ...breads,
+  ...savoryPies,
+  ...sweetPies,
+  ...cakes
 ];

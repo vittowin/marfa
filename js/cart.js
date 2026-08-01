@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!panel) return;
 
+  const getItemName = (item) => (
+    Number.isFinite(item.weight)
+      ? `${item.name}, ${item.weight.toLocaleString("ru-RU")} г`
+      : item.name
+  );
+
   const openCart = () => {
     panel.classList.add("open");
     overlay.classList.add("open");
@@ -50,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     itemsBox.innerHTML = rows.map((item) => `
       <div class="cart-item">
         <div>
-          <strong>${item.name}</strong>
+          <strong>${getItemName(item)}</strong>
           <span>${item.quantity} шт. × ${item.price.toLocaleString("ru-RU")} ₽</span>
         </div>
         <button class="cart-remove" type="button" data-remove="${item.id}" aria-label="Удалить позицию">×</button>
@@ -60,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const message = [
       "Здравствуйте! Хочу сделать заказ в пирожковой «Марфа и медведь»:",
       "",
-      ...rows.map((item, index) => `${index + 1}. ${item.name} — ${item.quantity} шт.`),
+      ...rows.map((item, index) => `${index + 1}. ${getItemName(item)} — ${item.quantity} шт.`),
       "",
       `Предварительная сумма: ${total.toLocaleString("ru-RU")} ₽`,
       "",

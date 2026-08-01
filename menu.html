@@ -5,12 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#284536">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/adaptive.css">
-<link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/style.css?v=12">
+<link rel="stylesheet" href="css/adaptive.css?v=12">
+<link rel="stylesheet" href="css/animation.css?v=12">
 
-  <link rel="stylesheet" href="css/menu.css">
-  <meta name="description" content="Меню пирожковой «Марфа и медведь»: пирожки, хлеб, большие пироги и десерты.">
+  <link rel="stylesheet" href="css/menu.css?v=12">
+  <meta name="description" content="Меню пирожковой «Марфа и медведь»: пирожки, хлеб, сытные и сладкие пироги, торты.">
   <title>Меню | Марфа и медведь</title>
 </head>
 <body>
@@ -27,7 +27,7 @@
 
     <nav class="main-nav" aria-label="Основная навигация">
       <a href="index.html">Главная</a>
-      <a href="menu.html">Меню</a>
+      <a class="active" href="menu.html">Меню</a>
       <a href="delivery.html">Доставка</a>
       <a href="contacts.html">Контакты</a>
     </nav>
@@ -55,7 +55,7 @@
       <div class="container">
         <span class="eyebrow">Меню</span>
         <h1>Свежая выпечка на каждый день</h1>
-        <p>Добавьте позиции в корзину. Сайт сформирует предварительный заказ и откроет его в WhatsApp/Telegram/Max.</p>
+        <p>Выберите позиции из полного каталога. Наличие и время готовности мы подтвердим при оформлении заказа.</p>
       </div>
     </section>
 
@@ -63,14 +63,18 @@
       <div class="container">
         <div class="menu-toolbar">
           <div class="filters">
-            <button class="filter-button active" data-filter="all">Всё</button>
-            <button class="filter-button" data-filter="savory">Сытные</button>
-            <button class="filter-button" data-filter="sweet">Сладкие</button>
-            <button class="filter-button" data-filter="bread">Хлеб</button>
-            <button class="filter-button" data-filter="large">Большие пироги</button>
-            <button class="filter-button" data-filter="dessert">Десерты</button>
+            <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">Всё</button>
+            <button class="filter-button" type="button" data-filter="pies" aria-pressed="false">Пирожки</button>
+            <button class="filter-button" type="button" data-filter="bread" aria-pressed="false">Хлеб</button>
+            <button class="filter-button" type="button" data-filter="savory-pies" aria-pressed="false">Сытные пироги</button>
+            <button class="filter-button" type="button" data-filter="sweet-pies" aria-pressed="false">Сладкие пироги</button>
+            <button class="filter-button" type="button" data-filter="cakes" aria-pressed="false">Торты</button>
           </div>
         </div>
+
+        <p class="catalog-note">
+          Вес и цена указаны за одну позицию. Сытные пироги выпекаются в формах D30 см, сладкие — D28 и D16 см. Стоимость коробки уже включена.
+        </p>
 
         <div class="products-grid" id="productsGrid"></div>
       </div>
@@ -90,7 +94,7 @@
     </div>
     <div class="cart-items" id="cartItems"></div>
     <div class="cart-total"><span>Итого</span><span id="cartTotal">0 ₽</span></div>
-    <a class="cart-order disabled" id="cartOrder" href="#" target="_blank" rel="noopener">Отправить заказ в WhatsApp/Telegram/MAX</a>
+    <a class="cart-order disabled" id="cartOrder" href="#" target="_blank" rel="noopener">Отправить заказ в WhatsApp</a>
   </aside>
 
   
@@ -101,9 +105,9 @@
   </div>
 </footer>
 
-  <script src="js/app.js"></script>
-  <script src="js/menu-data.js"></script>
-  <script src="js/menu.js"></script>
-  <script src="js/cart.js"></script>
+  <script src="js/app.js?v=12"></script>
+  <script src="js/menu-data.js?v=12"></script>
+  <script src="js/menu.js?v=12"></script>
+  <script src="js/cart.js?v=12"></script>
 </body>
 </html>

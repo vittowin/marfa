@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!grid || !window.MARFA_PRODUCTS) return;
 
+  const formatWeight = (weight) => (
+    Number.isFinite(weight) ? `${weight.toLocaleString("ru-RU")} г` : ""
+  );
+
   const renderProducts = (filter = "all") => {
     const products = window.MARFA_PRODUCTS.filter(
       (product) => filter === "all" || product.category === filter
@@ -12,12 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     grid.innerHTML = products.map((product) => `
       <article class="product-card" data-id="${product.id}">
-        <div class="product-image">
-          <img src="${product.image}" alt="${product.name}" loading="lazy"
-               onerror="this.style.display='none'">
-          <span class="product-tag">${product.categoryLabel}</span>
-        </div>
         <div class="product-body">
+          <div class="product-topline">
+            <span class="product-tag product-tag--inline">${product.categoryLabel}</span>
+            ${product.weight ? `<span class="product-weight">${formatWeight(product.weight)}</span>` : ""}
+          </div>
           <h3>${product.name}</h3>
           <p>${product.description}</p>
           <div class="product-bottom">
@@ -32,7 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
   filters.forEach((button) => {
     button.addEventListener("click", () => {
       filters.forEach((item) => item.classList.remove("active"));
+      filters.forEach((item) => item.setAttribute("aria-pressed", "false"));
       button.classList.add("active");
+      button.setAttribute("aria-pressed", "true");
       renderProducts(button.dataset.filter);
     });
   });
