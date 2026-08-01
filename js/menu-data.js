@@ -1,5 +1,5 @@
 const createCatalogSection = (items, defaults) => items.map((item) => {
-  const [id, name, weight, price, description, image] = item;
+  const [id, name, weight, price, description, image, choiceOptions] = item;
 
   return {
     ...defaults,
@@ -8,7 +8,8 @@ const createCatalogSection = (items, defaults) => items.map((item) => {
     weight,
     price,
     description: description || defaults.description,
-    ...(image ? { image } : {})
+    ...(image ? { image } : {}),
+    ...(choiceOptions ? { choiceOptions } : {})
   };
 });
 
@@ -109,9 +110,9 @@ const sweetPies = createCatalogSection([
   ["sweet-pie-lemon", "Пирог с лимоном", 1100, 990, null, "images/products/sweet-pies/sweet-pie-lemon.jpg"],
   ["sweet-pie-apricot", "Пирог с абрикосом", 1100, 990, null, "images/products/sweet-pies/sweet-pie-apricot.jpg"],
   ["sweet-pie-raspberry", "Пирог с малиной", 1100, 990, null, "images/products/sweet-pies/sweet-pie-raspberry.jpg"],
-  ["sweet-pie-curd-jam-large", "Пирог творожный с вареньем", 1300, 950, "Начинка на выбор: черника, малина, вишня, брусника, абрикос, клубника, киви, персик, чёрная смородина, мак или изюм.", "images/products/sweet-pies/sweet-pie-curd-jam.jpg"],
-  ["sweet-pie-curd-jam-small", "Пирог творожный с вареньем", 600, 650, "Начинка на выбор: черника, малина, вишня, брусника, абрикос, клубника, киви, персик, чёрная смородина, мак или изюм.", "images/products/sweet-pies/sweet-pie-curd-jam.jpg"],
-  ["sweet-pie-curd-banana-pineapple", "Пирог творожный с бананом или ананасом", 800, 700, "Песочное тесто; начинка с бананом или ананасом на выбор.", "images/products/sweet-pies/sweet-pie-curd-banana-pineapple.jpg"]
+  ["sweet-pie-curd-jam-large", "Пирог творожный с вареньем", 1300, 950, "Начинка на выбор: черника, малина, вишня, брусника, абрикос, клубника, киви, персик, чёрная смородина, мак или изюм.", "images/products/sweet-pies/sweet-pie-curd-jam.jpg", ["Черника", "Малина", "Вишня", "Брусника", "Абрикос", "Клубника", "Киви", "Персик", "Чёрная смородина", "Мак", "Изюм"]],
+  ["sweet-pie-curd-jam-small", "Пирог творожный с вареньем", 600, 650, "Начинка на выбор: черника, малина, вишня, брусника, абрикос, клубника, киви, персик, чёрная смородина, мак или изюм.", "images/products/sweet-pies/sweet-pie-curd-jam.jpg", ["Черника", "Малина", "Вишня", "Брусника", "Абрикос", "Клубника", "Киви", "Персик", "Чёрная смородина", "Мак", "Изюм"]],
+  ["sweet-pie-curd-banana-pineapple", "Пирог творожный с бананом или ананасом", 800, 700, "Песочное тесто; начинка с бананом или ананасом на выбор.", "images/products/sweet-pies/sweet-pie-curd-banana-pineapple.jpg", ["Банан", "Ананас"]]
 ], {
   category: "sweet-pies",
   categoryLabel: "Сладкий пирог",
@@ -129,7 +130,7 @@ const cakes = createCatalogSection([
   ["cake-blackcurrant", "Торт «Смородиновый»", 600, 1200, "Ванильный бисквит, смородиновое компоте, сливочно-творожный крем; декор из смородинового геля, марципана и сливочного крема.", "images/products/cakes/cake-blackcurrant.jpg"],
   ["cake-birds-milk", "Торт «Птичье молоко»", 600, 1450, "Шоколадный бисквит, суфле и шоколадная глазурь.", "images/products/cakes/cake-birds-milk.jpg"],
   ["cake-tulips", "Торт «Тюльпаны»", 500, 1050, "Ванильный бисквит, сливочный крем, сгущённое молоко и меренга.", "images/products/cakes/cake-tulips.jpg"],
-  ["cake-bento", "Торт «Бенто»", 250, 750, "Ванильно-шоколадные бисквиты; банановый, клубничный или фисташковый крем на выбор.", "images/products/cakes/cake-bento.jpg"],
+  ["cake-bento", "Торт «Бенто»", 250, 750, "Ванильно-шоколадные бисквиты; банановый, клубничный или фисташковый крем на выбор.", "images/products/cakes/cake-bento.jpg", ["Банановый крем", "Клубничный крем", "Фисташковый крем"]],
   ["cake-berry-basket", "Торт «Ягодное лукошко»", 1100, 1550, "Ванильный бисквит, заварной крем «Дипломат», малина, красная и чёрная смородина, желе.", "images/products/cakes/cake-berry-basket.jpg"],
   ["cake-esterhazy", "Торт «Эстерхази»", 600, 1450, "Миндальные коржи, заварной крем «Эстерхази», миндальные лепестки, белый и тёмный гляссаж.", "images/products/cakes/cake-esterhazy.jpg"],
   ["cake-three-chocolates", "Торт «Три шоколада»", 800, 1900, "Шоколадно-шифоновый бисквит и суфле из белого, молочного и тёмного шоколада.", "images/products/cakes/cake-three-chocolates.jpg"],
