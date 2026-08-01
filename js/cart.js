@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const addressField = document.getElementById("deliveryAddress");
   const addressFieldWrap = document.getElementById("deliveryAddressField");
   const commentField = document.getElementById("orderComment");
+  let focusBeforeCart = null;
 
   if (!panel || !checkoutForm) return;
 
@@ -63,7 +64,16 @@ document.addEventListener("DOMContentLoaded", () => {
     checkoutTotal.textContent = `${total.toLocaleString("ru-RU")} ₽`;
   };
 
+  const isCartOpen = () => panel.classList.contains("open");
+
+  const getFocusableElements = () => Array.from(panel.querySelectorAll(
+    'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  )).filter((element) => !element.hidden && element.getClientRects().length > 0);
+
   const openCart = () => {
+    if (isCartOpen()) return;
+    focusBeforeCart = document.activeElement;
+    panel.removeAttribute("inert");
     panel.classList.add("open");
     overlay.classList.add("open");
     panel.setAttribute("aria-hidden", "false");
@@ -73,19 +83,29 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const closeCart = () => {
+    if (!isCartOpen()) return;
     panel.classList.remove("open");
     overlay.classList.remove("open");
     panel.setAttribute("aria-hidden", "true");
     openButton?.setAttribute("aria-expanded", "false");
     document.body.classList.remove("lock");
-    openButton?.focus();
+    panel.setAttribute("inert", "");
+
+    const focusTarget = focusBeforeCart?.isConnected ? focusBeforeCart : openButton;
+    focusTarget?.focus();
+    focusBeforeCart = null;
   };
 
   const showCartStep = () => {
     cartView.hidden = false;
     checkoutForm.hidden = true;
     title.textContent = "Ваш заказ";
-    checkoutButton?.focus();
+    if (isCartOpen()) {
+      const focusTarget = checkoutButton && !checkoutButton.disabled
+        ? checkoutButton
+        : closeButton;
+      focusTarget?.focus();
+    }
   };
 
   const renderCheckoutOptions = () => {
@@ -202,6 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
       itemsBox.innerHTML = '<div class="cart-empty">Корзина пока пуста.</div>';
       checkoutButton.classList.add("disabled");
       checkoutButton.disabled = true;
+      checkoutButton.setAttribute("aria-disabled", "true");
       showCartStep();
       return;
     }
@@ -223,6 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     checkoutButton.classList.remove("disabled");
     checkoutButton.disabled = false;
+    checkoutButton.setAttribute("aria-disabled", "false");
   };
 
   const toggleAddressField = () => {
@@ -272,6 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", (event) => {
     const addButton = event.target.closest("[data-cart-add]");
     if (addButton) {
+      event.preventDefault();
       changeQuantity(addButton.dataset.cartAdd, 1);
       return;
     }
@@ -361,7 +384,34 @@ document.addEventListener("DOMContentLoaded", () => {
   checkoutBack?.addEventListener("click", showCartStep);
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeCart();
+    if (!isCartOpen()) return;
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeCart();
+      return;
+    }
+
+    if (event.key !== "Tab") return;
+
+    const focusableElements = getFocusableElements();
+    if (!focusableElements.length) {
+      event.preventDefault();
+      panel.focus();
+      return;
+    }
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+    const focusIsOutside = !panel.contains(document.activeElement);
+
+    if (event.shiftKey && (document.activeElement === firstElement || focusIsOutside)) {
+      event.preventDefault();
+      lastElement.focus();
+    } else if (!event.shiftKey && (document.activeElement === lastElement || focusIsOutside)) {
+      event.preventDefault();
+      firstElement.focus();
+    }
   });
 
   const today = new Date();

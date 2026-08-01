@@ -57,6 +57,11 @@
     font-weight: 800;
   }
 
+  .mobile-nav a[aria-current="page"] {
+    color: white;
+    background: var(--green);
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
   }

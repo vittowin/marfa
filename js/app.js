@@ -4,12 +4,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileNav = document.querySelector(".mobile-nav");
 
   if (toggle && mobileNav) {
+    const setMenuState = (isOpen, restoreFocus = false) => {
+      mobileNav.classList.toggle("open", isOpen);
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
+
+      if (!isOpen && restoreFocus) toggle.focus();
+    };
+
     toggle.addEventListener("click", () => {
-      mobileNav.classList.toggle("open");
+      setMenuState(!mobileNav.classList.contains("open"));
     });
 
     mobileNav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => mobileNav.classList.remove("open"));
+      link.addEventListener("click", () => setMenuState(false));
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape" || !mobileNav.classList.contains("open")) return;
+      event.preventDefault();
+      setMenuState(false, true);
     });
   }
 

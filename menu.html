@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="no-js">
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#284536">
-<link rel="stylesheet" href="css/style.css?v=14">
-<link rel="stylesheet" href="css/adaptive.css?v=13">
+<script>document.documentElement.classList.remove("no-js");</script>
+<link rel="stylesheet" href="css/style.css?v=15">
+<link rel="stylesheet" href="css/adaptive.css?v=14">
 <link rel="stylesheet" href="css/animation.css?v=12">
 
-  <link rel="stylesheet" href="css/menu.css?v=24">
+  <link rel="stylesheet" href="css/menu.css?v=25">
   <meta name="description" content="Меню пирожковой «Марфа и медведь»: пирожки, хлеб, сытные и сладкие пироги, торты.">
   <link rel="canonical" href="https://vittowin.github.io/marfa/menu.html">
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -40,7 +41,7 @@
 
     <nav class="main-nav" aria-label="Основная навигация">
       <a href="./">Главная</a>
-      <a class="active" href="menu.html">Меню</a>
+      <a class="active" href="menu.html" aria-current="page">Меню</a>
       <a href="delivery.html">Доставка</a>
       <a href="contacts.html">Контакты</a>
     </nav>
@@ -52,14 +53,14 @@
         <span>Корзина</span>
         <span class="cart-count" id="cartCount">0</span>
       </button>
-      <button class="menu-toggle" type="button" aria-label="Открыть меню">
+      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-controls="mobileNav" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
 
-    <nav class="mobile-nav" aria-label="Мобильная навигация">
+    <nav class="mobile-nav" id="mobileNav" aria-label="Мобильная навигация">
       <a href="./">Главная</a>
-      <a href="menu.html">Меню</a>
+      <a class="active" href="menu.html" aria-current="page">Меню</a>
       <a href="delivery.html">Доставка</a>
       <a href="contacts.html">Контакты</a>
     </nav>
@@ -84,7 +85,7 @@
     <section class="section section--paper">
       <div class="container">
         <div class="menu-toolbar">
-          <div class="filters">
+          <div class="filters" aria-label="Фильтр каталога">
             <button class="filter-button" type="button" data-filter="all" aria-pressed="false">Всё</button>
             <button class="filter-button active" type="button" data-filter="pies" aria-pressed="true">Пирожки</button>
             <button class="filter-button" type="button" data-filter="bread" aria-pressed="false">Хлеб</button>
@@ -92,6 +93,11 @@
             <button class="filter-button" type="button" data-filter="sweet-pies" aria-pressed="false">Сладкие пироги</button>
             <button class="filter-button" type="button" data-filter="cakes" aria-pressed="false">Торты</button>
           </div>
+        </div>
+
+        <div class="no-js-fallback">
+          <p>Ниже показано полное меню. Чтобы оформить заказ без JavaScript, позвоните нам.</p>
+          <a class="button button--green" href="tel:+79112875453">Позвонить: +7 911 287-54-53</a>
         </div>
 
         <p class="cake-note" id="cakeNote" hidden>
@@ -1719,7 +1725,7 @@
 
   <div class="cart-overlay" id="cartOverlay"></div>
 
-  <aside class="cart-panel" id="cartPanel" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+  <aside class="cart-panel" id="cartPanel" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true" tabindex="-1" inert>
     <div class="cart-header">
       <h3 id="cartTitle">Ваш заказ</h3>
       <button class="cart-close" id="cartClose" type="button" aria-label="Закрыть корзину">×</button>
@@ -1727,7 +1733,7 @@
     <div id="cartView">
       <div class="cart-items" id="cartItems"></div>
       <div class="cart-total"><span>Итого</span><span id="cartTotal">0 ₽</span></div>
-      <button class="cart-order disabled" id="cartCheckout" type="button" disabled>Оформить заказ</button>
+      <button class="cart-order disabled" id="cartCheckout" type="button" disabled aria-disabled="true">Оформить заказ</button>
     </div>
 
     <form class="checkout-form" id="checkoutForm" hidden>
@@ -1804,9 +1810,9 @@
   </div>
 </footer>
 
-  <script src="js/app.js?v=12"></script>
+  <script src="js/app.js?v=13"></script>
   <script src="js/menu-data.js?v=19"></script>
   <script src="js/menu.js?v=20"></script>
-  <script src="js/cart.js?v=19"></script>
+  <script src="js/cart.js?v=20"></script>
 </body>
 </html>
