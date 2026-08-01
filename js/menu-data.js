@@ -84,18 +84,18 @@ const breads = createCatalogSection([
 });
 
 const savoryPies = createCatalogSection([
-  ["savory-pie-cabbage-egg", "Пирог с капустой и яйцом", 1250, 900],
-  ["savory-pie-cabbage", "Пирог с капустой", 1250, 900],
-  ["savory-pie-potato", "Пирог с картошкой", 1250, 900],
-  ["savory-pie-rice-egg", "Пирог с рисом и яйцом", 1250, 900],
-  ["savory-pie-green-onion-egg", "Пирог с зелёным луком и яйцом", 1150, 940],
-  ["savory-pie-green-onion-rice", "Пирог с зелёным луком и рисом", 1150, 940],
-  ["savory-pie-vegetable", "Пирог с овощами", 1200, 940],
-  ["savory-pie-beef-cabbage", "Пирог с мясом и капустой", 1250, 990],
-  ["savory-pie-ham-cheese", "Пирог с ветчиной и сыром", 1150, 990],
-  ["savory-pie-liver", "Пирог с говяжьей печенью", 1150, 990],
-  ["savory-pie-chicken", "Пирог с курицей", 1150, 1100],
-  ["savory-pie-beef", "Пирог с говядиной", 1150, 1200]
+  ["savory-pie-cabbage-egg", "Пирог с капустой и яйцом", 1250, 900, null, "images/products/savory-pies/savory-pie-cabbage-egg.jpg"],
+  ["savory-pie-cabbage", "Пирог с капустой", 1250, 900, null, "images/products/savory-pies/savory-pie-cabbage.jpg"],
+  ["savory-pie-potato", "Пирог с картошкой", 1250, 900, null, "images/products/savory-pies/savory-pie-potato.jpg"],
+  ["savory-pie-rice-egg", "Пирог с рисом и яйцом", 1250, 900, null, "images/products/savory-pies/savory-pie-rice-egg.jpg"],
+  ["savory-pie-green-onion-egg", "Пирог с зелёным луком и яйцом", 1150, 940, null, "images/products/savory-pies/savory-pie-green-onion-egg.jpg"],
+  ["savory-pie-green-onion-rice", "Пирог с зелёным луком и рисом", 1150, 940, null, "images/products/savory-pies/savory-pie-green-onion-rice.jpg"],
+  ["savory-pie-vegetable", "Пирог с овощами", 1200, 940, null, "images/products/savory-pies/savory-pie-vegetable.jpg"],
+  ["savory-pie-beef-cabbage", "Пирог с мясом и капустой", 1250, 990, null, "images/products/savory-pies/savory-pie-beef-cabbage.jpg"],
+  ["savory-pie-ham-cheese", "Пирог с ветчиной и сыром", 1150, 990, null, "images/products/savory-pies/savory-pie-ham-cheese.jpg"],
+  ["savory-pie-liver", "Пирог с говяжьей печенью", 1150, 990, null, "images/products/savory-pies/savory-pie-liver.jpg"],
+  ["savory-pie-chicken", "Пирог с курицей", 1150, 1100, null, "images/products/savory-pies/savory-pie-chicken.jpg"],
+  ["savory-pie-beef", "Пирог с говядиной", 1150, 1200, null, "images/products/savory-pies/savory-pie-beef.jpg"]
 ], {
   category: "savory-pies",
   categoryLabel: "Сытный пирог",
