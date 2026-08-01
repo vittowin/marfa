@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ${product.weight ? `<span class="product-weight">${formatWeight(product.weight)}</span>` : ""}
           </div>
           <h3>${product.name}</h3>
-          <p>${product.description}</p>
+          ${product.description ? `<p>${product.description}</p>` : ""}
           <div class="product-bottom">
             <span class="product-price">${product.price.toLocaleString("ru-RU")} ₽</span>
             <button class="add-to-cart" type="button" data-product="${product.id}">В корзину</button>

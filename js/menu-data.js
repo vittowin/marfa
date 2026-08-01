@@ -38,7 +38,7 @@ const wheatPies = createCatalogSection([
 ], {
   category: "pies",
   categoryLabel: "Пшеничная мука",
-  description: "Пирожок из пшеничной муки."
+  description: ""
 });
 
 const multigrainPies = createCatalogSection([
@@ -58,7 +58,7 @@ const multigrainPies = createCatalogSection([
 ], {
   category: "pies",
   categoryLabel: "Многозерновая мука",
-  description: "Пирожок из многозерновой муки."
+  description: ""
 });
 
 const breads = createCatalogSection([
@@ -98,7 +98,7 @@ const savoryPies = createCatalogSection([
 ], {
   category: "savory-pies",
   categoryLabel: "Сытный пирог",
-  description: "На заказ. Круглая форма D30 см; коробка включена в стоимость."
+  description: "На заказ. Круглая форма, диаметр 30 см; коробка включена в стоимость."
 });
 
 const sweetPies = createCatalogSection([
@@ -114,7 +114,7 @@ const sweetPies = createCatalogSection([
 ], {
   category: "sweet-pies",
   categoryLabel: "Сладкий пирог",
-  description: "На заказ. Круглая форма D28 или D16 см; коробка включена в стоимость."
+  description: "На заказ. Круглая форма, диаметр 28 или 16 см; коробка включена в стоимость."
 });
 
 const cakes = createCatalogSection([
