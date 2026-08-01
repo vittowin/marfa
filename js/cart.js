@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-  const cart = [];
+  const cart = new Map();
   const openButton = document.getElementById("cartOpen");
   const closeButton = document.getElementById("cartClose");
   const overlay = document.getElementById("cartOverlay");
@@ -21,30 +21,66 @@ document.addEventListener("DOMContentLoaded", () => {
   const openCart = () => {
     panel.classList.add("open");
     overlay.classList.add("open");
+    panel.setAttribute("aria-hidden", "false");
+    openButton?.setAttribute("aria-expanded", "true");
     document.body.classList.add("lock");
+    closeButton?.focus();
   };
 
   const closeCart = () => {
     panel.classList.remove("open");
     overlay.classList.remove("open");
+    panel.setAttribute("aria-hidden", "true");
+    openButton?.setAttribute("aria-expanded", "false");
     document.body.classList.remove("lock");
+    openButton?.focus();
+  };
+
+  const getQuantity = (productId) => cart.get(productId) || 0;
+
+  const renderProductControls = () => {
+    document.querySelectorAll("[data-cart-control]").forEach((control) => {
+      const productId = control.dataset.cartControl;
+      const quantity = getQuantity(productId);
+
+      control.innerHTML = quantity > 0
+        ? `
+          <div class="quantity-control" aria-label="Количество товара">
+            <button type="button" data-cart-change="-1" data-product-id="${productId}" aria-label="Уменьшить количество">−</button>
+            <span aria-live="polite">${quantity}</span>
+            <button type="button" data-cart-change="1" data-product-id="${productId}" aria-label="Увеличить количество">+</button>
+          </div>
+        `
+        : `<button class="add-to-cart" type="button" data-cart-add="${productId}">В корзину</button>`;
+    });
+  };
+
+  const changeQuantity = (productId, change) => {
+    const product = window.MARFA_PRODUCTS?.find((item) => item.id === productId);
+    if (!product) return;
+
+    const nextQuantity = getQuantity(productId) + change;
+
+    if (nextQuantity > 0) {
+      cart.set(productId, nextQuantity);
+    } else {
+      cart.delete(productId);
+    }
+
+    renderCart();
   };
 
   const renderCart = () => {
-    const grouped = {};
+    const rows = Array.from(cart, ([productId, quantity]) => {
+      const product = window.MARFA_PRODUCTS?.find((item) => item.id === productId);
+      return product ? { ...product, quantity } : null;
+    }).filter(Boolean);
+    const itemCount = rows.reduce((sum, item) => sum + item.quantity, 0);
+    const total = rows.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-    cart.forEach((item) => {
-      if (!grouped[item.id]) {
-        grouped[item.id] = { ...item, quantity: 0 };
-      }
-      grouped[item.id].quantity += 1;
-    });
-
-    const rows = Object.values(grouped);
-    const total = cart.reduce((sum, item) => sum + item.price, 0);
-
-    countBox.textContent = String(cart.length);
+    countBox.textContent = String(itemCount);
     totalBox.textContent = `${total.toLocaleString("ru-RU")} ₽`;
+    renderProductControls();
 
     if (!rows.length) {
       itemsBox.innerHTML = '<div class="cart-empty">Корзина пока пуста.</div>';
@@ -55,11 +91,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     itemsBox.innerHTML = rows.map((item) => `
       <div class="cart-item">
-        <div>
+        <div class="cart-item-copy">
           <strong>${getItemName(item)}</strong>
-          <span>${item.quantity} шт. × ${item.price.toLocaleString("ru-RU")} ₽</span>
+          <span>${item.price.toLocaleString("ru-RU")} ₽ за штуку</span>
+          <b>${(item.price * item.quantity).toLocaleString("ru-RU")} ₽</b>
         </div>
-        <button class="cart-remove" type="button" data-remove="${item.id}" aria-label="Удалить позицию">×</button>
+        <div class="quantity-control quantity-control--cart" aria-label="Количество товара">
+          <button type="button" data-cart-change="-1" data-product-id="${item.id}" aria-label="Уменьшить количество">−</button>
+          <span aria-live="polite">${item.quantity}</span>
+          <button type="button" data-cart-change="1" data-product-id="${item.id}" aria-label="Увеличить количество">+</button>
+        </div>
       </div>
     `).join("");
 
@@ -76,36 +117,25 @@ document.addEventListener("DOMContentLoaded", () => {
     orderLink.href = `https://wa.me/79112875453?text=${encodeURIComponent(message)}`;
     orderLink.classList.remove("disabled");
 
-    document.querySelectorAll("[data-remove]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const index = cart.findIndex((item) => item.id === button.dataset.remove);
-        if (index !== -1) cart.splice(index, 1);
-        renderCart();
-      });
-    });
   };
 
   document.addEventListener("click", (event) => {
-    const addButton = event.target.closest("[data-product]");
-    if (!addButton || !window.MARFA_PRODUCTS) return;
+    const addButton = event.target.closest("[data-cart-add]");
+    if (addButton) {
+      changeQuantity(addButton.dataset.cartAdd, 1);
+      return;
+    }
 
-    const product = window.MARFA_PRODUCTS.find(
-      (item) => item.id === addButton.dataset.product
-    );
-
-    if (!product) return;
-
-    cart.push(product);
-    addButton.textContent = "Добавлено";
-    addButton.style.background = "var(--orange)";
-
-    setTimeout(() => {
-      addButton.textContent = "В корзину";
-      addButton.style.background = "";
-    }, 800);
-
-    renderCart();
+    const quantityButton = event.target.closest("[data-cart-change]");
+    if (quantityButton) {
+      changeQuantity(
+        quantityButton.dataset.productId,
+        Number(quantityButton.dataset.cartChange)
+      );
+    }
   });
+
+  document.addEventListener("marfa:products-rendered", renderProductControls);
 
   openButton?.addEventListener("click", openCart);
   closeButton?.addEventListener("click", closeCart);

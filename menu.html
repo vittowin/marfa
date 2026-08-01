@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/adaptive.css?v=12">
 <link rel="stylesheet" href="css/animation.css?v=12">
 
-  <link rel="stylesheet" href="css/menu.css?v=16">
+  <link rel="stylesheet" href="css/menu.css?v=18">
   <meta name="description" content="Меню пирожковой «Марфа и медведь»: пирожки, хлеб, сытные и сладкие пироги, торты.">
   <title>Меню | Марфа и медведь</title>
 </head>
@@ -35,6 +35,10 @@
     <div class="header-actions">
       <a class="header-phone" href="tel:+79112875453">+7 911 287-54-53</a>
       <a class="button button--green" href="menu.html">Заказать</a>
+      <button class="header-cart" id="cartOpen" type="button" aria-controls="cartPanel" aria-expanded="false" aria-label="Открыть корзину">
+        <span>Корзина</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
       <button class="menu-toggle" type="button" aria-label="Открыть меню">
         <span></span><span></span><span></span>
       </button>
@@ -73,8 +77,7 @@
         </div>
 
         <p class="cake-note" id="cakeNote" hidden>
-          <strong>На любой торт можно добавить поздравительную надпись</strong> —
-          шоколадный медальончик с поздравительной надписью — 300 ₽.
+          На любой торт можно добавить поздравительную надпись - шоколадный медальончик с поздравительной надписью - 300 ₽
         </p>
 
         <div class="products-grid" id="productsGrid"></div>
@@ -82,15 +85,11 @@
     </section>
   </main>
 
-  <button class="cart-fab" id="cartOpen" type="button">
-    Корзина <span class="cart-count" id="cartCount">0</span>
-  </button>
-
   <div class="cart-overlay" id="cartOverlay"></div>
 
-  <aside class="cart-panel" id="cartPanel" aria-hidden="true">
+  <aside class="cart-panel" id="cartPanel" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
     <div class="cart-header">
-      <h3>Ваш заказ</h3>
+      <h3 id="cartTitle">Ваш заказ</h3>
       <button class="cart-close" id="cartClose" type="button" aria-label="Закрыть корзину">×</button>
     </div>
     <div class="cart-items" id="cartItems"></div>
@@ -108,7 +107,7 @@
 
   <script src="js/app.js?v=12"></script>
   <script src="js/menu-data.js?v=17"></script>
-  <script src="js/menu.js?v=16"></script>
-  <script src="js/cart.js?v=12"></script>
+  <script src="js/menu.js?v=18"></script>
+  <script src="js/cart.js?v=18"></script>
 </body>
 </html>

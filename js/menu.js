@@ -31,13 +31,16 @@ document.addEventListener("DOMContentLoaded", () => {
           ${product.description ? `<p>${product.description}</p>` : ""}
           <div class="product-bottom">
             <span class="product-price">${product.price.toLocaleString("ru-RU")} ₽</span>
-            <button class="add-to-cart" type="button" data-product="${product.id}">В корзину</button>
+            <div class="product-cart-control" data-cart-control="${product.id}">
+              <button class="add-to-cart" type="button" data-cart-add="${product.id}">В корзину</button>
+            </div>
           </div>
         </div>
       </article>
     `).join("");
 
     if (cakeNote) cakeNote.hidden = filter !== "cakes";
+    document.dispatchEvent(new CustomEvent("marfa:products-rendered"));
   };
 
   filters.forEach((button) => {

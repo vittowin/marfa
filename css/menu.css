@@ -178,22 +178,57 @@
   background: var(--green-dark);
 }
 
-.cart-fab {
-  position: fixed;
-  z-index: 80;
-  right: 22px;
-  bottom: 22px;
+.product-cart-control {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 106px;
+}
+
+.quantity-control {
+  display: grid;
+  grid-template-columns: 36px 34px 36px;
+  align-items: center;
+  min-height: 40px;
+  overflow: hidden;
+  border-radius: 999px;
+  color: white;
+  background: var(--green);
+  font-size: 14px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.quantity-control button {
+  width: 36px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.quantity-control button:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.header-cart {
   display: flex;
   align-items: center;
   gap: 10px;
-  min-height: 56px;
-  padding: 0 19px;
+  min-height: 44px;
+  padding: 0 13px;
   border: 0;
   border-radius: 999px;
   color: white;
   background: var(--orange);
-  box-shadow: 0 16px 36px rgba(108, 55, 30, 0.3);
+  box-shadow: 0 10px 24px rgba(108, 55, 30, 0.24);
   font-weight: 900;
+}
+
+.header-cart:hover {
+  background: var(--orange-dark);
 }
 
 .cart-count {
@@ -304,11 +339,29 @@
   font-size: 12px;
 }
 
-.cart-remove {
-  border: 0;
-  color: var(--orange-dark);
-  background: transparent;
-  font-size: 18px;
+.cart-item b {
+  display: block;
+  margin-top: 7px;
+  color: var(--green);
+  font-size: 14px;
+}
+
+.quantity-control--cart {
+  align-self: center;
+  grid-template-columns: 34px 30px 34px;
+  min-height: 38px;
+  border: 1px solid var(--line);
+  color: var(--green);
+  background: var(--sand);
+}
+
+.quantity-control--cart button {
+  width: 34px;
+  height: 38px;
+}
+
+.quantity-control--cart button:hover {
+  background: rgba(40, 69, 54, 0.08);
 }
 
 .cart-total {
@@ -356,12 +409,22 @@
 }
 
 @media (max-width: 520px) {
+  .logo-copy {
+    display: none;
+  }
+
+  .header-inner,
+  .header-actions {
+    gap: 8px;
+  }
+
   .products-grid {
     grid-template-columns: 1fr;
   }
 
-  .cart-fab {
-    right: 14px;
-    bottom: 14px;
+  .header-cart {
+    gap: 6px;
+    padding: 0 9px;
+    font-size: 12px;
   }
 }
