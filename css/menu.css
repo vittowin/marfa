@@ -7,17 +7,6 @@
   margin-bottom: 30px;
 }
 
-.catalog-note {
-  margin: -12px 0 30px;
-  padding: 16px 18px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  color: var(--muted);
-  background: rgba(255, 255, 255, 0.58);
-  font-size: 13px;
-  line-height: 1.55;
-}
-
 .filters {
   display: flex;
   flex-wrap: wrap;

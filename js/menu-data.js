@@ -98,7 +98,7 @@ const savoryPies = createCatalogSection([
 ], {
   category: "savory-pies",
   categoryLabel: "Сытный пирог",
-  description: "На заказ. Круглая форма, диаметр 30 см; коробка включена в стоимость."
+  description: "Выпекается на заказ. Круглая форма, диаметр 30 см."
 });
 
 const sweetPies = createCatalogSection([
@@ -114,7 +114,7 @@ const sweetPies = createCatalogSection([
 ], {
   category: "sweet-pies",
   categoryLabel: "Сладкий пирог",
-  description: "На заказ. Круглая форма, диаметр 28 или 16 см; коробка включена в стоимость."
+  description: "Выпекается на заказ. Круглая форма, диаметр 28 или 16 см."
 });
 
 const cakes = createCatalogSection([
