@@ -158,4 +158,8 @@
   .footer-grid {
     flex-direction: column;
   }
+
+  .footer-links {
+    justify-content: flex-start;
+  }
 }
