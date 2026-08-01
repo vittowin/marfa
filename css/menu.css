@@ -497,7 +497,15 @@
   }
 
   .menu-toolbar {
-    margin-bottom: 20px;
+    position: sticky;
+    top: 82px;
+    z-index: 40;
+    margin: 0 -14px 20px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--line);
+    background: rgba(255, 253, 248, 0.96);
+    box-shadow: 0 10px 24px rgba(55, 42, 30, 0.08);
+    backdrop-filter: blur(12px);
   }
 
   .filters {
@@ -505,6 +513,7 @@
     overflow-x: auto;
     padding-bottom: 4px;
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
   }
 
   .filters::-webkit-scrollbar {
