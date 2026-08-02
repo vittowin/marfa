@@ -433,6 +433,11 @@
   text-align: center;
 }
 
+.product-cart-control .quantity-control {
+  background: var(--orange);
+  box-shadow: 0 8px 20px rgba(184, 91, 45, 0.24);
+}
+
 .quantity-control button {
   width: 36px;
   height: 40px;
