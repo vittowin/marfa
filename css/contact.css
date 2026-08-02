@@ -206,26 +206,8 @@
   background: linear-gradient(90deg, rgba(241, 223, 196, 0.22), transparent 42%);
 }
 
-.delivery-hero-sticker {
-  position: absolute;
-  right: 0;
+.delivery-hero-note {
   bottom: 0;
-  display: grid;
-  place-items: center;
-  width: 124px;
-  height: 124px;
-  padding: 14px;
-  border: 5px solid rgba(255, 249, 239, 0.82);
-  border-radius: 50%;
-  color: #ffffff;
-  background: var(--orange);
-  box-shadow: 0 14px 32px rgba(184, 91, 45, 0.25);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.2;
-  text-align: center;
-  transform: rotate(-7deg);
 }
 
 .delivery-options {
@@ -515,13 +497,6 @@
     width: 100%;
   }
 
-  .delivery-hero-sticker {
-    width: 106px;
-    height: 106px;
-    border-width: 4px;
-    font-size: 11px;
-  }
-
   .contact-card {
     min-height: auto;
     padding: 24px;
@@ -588,13 +563,6 @@
   .delivery-hero-photo {
     margin-bottom: 0;
     border-radius: 30% 10% 30% 10%;
-  }
-
-  .delivery-hero-sticker {
-    width: 94px;
-    height: 94px;
-    padding: 9px;
-    font-size: 10px;
   }
 
   .contacts-hero-visual {
