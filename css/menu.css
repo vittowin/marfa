@@ -89,24 +89,24 @@
   pointer-events: none;
 }
 
-.menu-hero-photo::before {
+.menu-hero-visual::after {
   content: "Сегодня\Aна витрине";
   position: absolute;
-  right: 20px;
+  right: 0;
   bottom: 20px;
   z-index: 2;
   display: grid;
   place-items: center;
-  width: 116px;
-  height: 116px;
-  padding: 12px;
+  width: 104px;
+  height: 104px;
+  padding: 10px;
   border: 5px solid rgba(255, 249, 239, 0.88);
   border-radius: 50%;
   color: #ffffff;
   background: var(--orange);
   box-shadow: 0 14px 32px rgba(184, 91, 45, 0.28);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.15;
   white-space: pre;
@@ -932,14 +932,14 @@
     border-radius: 30% 10% 30% 10%;
   }
 
-  .menu-hero-photo::before {
-    right: 12px;
-    bottom: 12px;
-    width: 94px;
-    height: 94px;
-    padding: 8px;
+  .menu-hero-visual::after {
+    right: 0;
+    bottom: 10px;
+    width: 88px;
+    height: 88px;
+    padding: 7px;
     border-width: 4px;
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .page-hero--menu + .section {
