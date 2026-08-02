@@ -48,6 +48,56 @@
   object-position: center;
 }
 
+.delivery-options {
+  background: linear-gradient(180deg, #fff9ef 0%, #fffdf8 100%);
+}
+
+.delivery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.delivery-card {
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 14px 36px rgba(55, 42, 30, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.delivery-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 44px rgba(55, 42, 30, 0.11);
+}
+
+.delivery-card .info-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  font-size: 24px;
+  line-height: 1;
+  box-shadow: 0 10px 24px rgba(40, 69, 54, 0.2);
+}
+
+.delivery-card h3 {
+  margin: 18px 0 0;
+  color: var(--green);
+  font-size: 23px;
+  line-height: 1.15;
+}
+
+.delivery-card p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -155,6 +205,12 @@
   border: 0;
 }
 
+@media (max-width: 900px) {
+  .delivery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 850px) {
   .delivery-hero-grid,
   .contacts-hero-grid {
@@ -183,6 +239,15 @@
 }
 
 @media (max-width: 650px) {
+  .delivery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .delivery-card {
+    padding: 24px;
+    border-radius: 20px;
+  }
+
   .contact-card {
     min-height: auto;
     padding: 24px;
