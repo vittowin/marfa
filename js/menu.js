@@ -25,5 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  renderProducts();
+  const requestedFilter = new URLSearchParams(window.location.search).get("filter");
+  const hasRequestedFilter = Array.from(filters).some(
+    (button) => button.dataset.filter === requestedFilter
+  );
+  const initialFilter = hasRequestedFilter ? requestedFilter : "pies";
+
+  filters.forEach((button) => {
+    const isActive = button.dataset.filter === initialFilter;
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+
+  renderProducts(initialFilter);
 });
