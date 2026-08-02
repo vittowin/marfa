@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="css/adaptive.css?v=14">
 <link rel="stylesheet" href="css/animation.css?v=12">
 
-  <link rel="stylesheet" href="css/menu.css?v=25">
+  <link rel="stylesheet" href="css/menu.css?v=26">
   <meta name="description" content="Меню пирожковой «Марфа и медведь»: пирожки, хлеб, сытные и сладкие пироги, торты.">
   <link rel="canonical" href="https://vittowin.github.io/marfa/menu.html">
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -69,18 +69,60 @@
       <div class="container menu-hero-grid">
         <div class="menu-hero-copy">
           <span class="eyebrow">Меню</span>
-          <h1>Свежая выпечка на каждый день</h1>
-          <p>Наличие и время готовности мы подтвердим при оформлении заказа.</p>
+
+          <h1>Свежая выпечка<br>на каждый день</h1>
+
+          <p class="menu-hero-lead">
+            Пирожки, хлеб, пироги и торты — выбирайте категорию
+            и сразу переходите к нужным товарам.
+          </p>
+
+          <div class="menu-hero-facts" aria-label="Информация о меню">
+            <span>
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 7v5l3 2"></path>
+              </svg>
+              Ежедневно, 08:00–20:00
+            </span>
+
+            <span>
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="m8 12 2.5 2.5L16 9"></path>
+              </svg>
+              Наличие подтвердим при заказе
+            </span>
+          </div>
+
+          <div class="menu-hero-actions">
+            <a class="button button--orange" href="#menuCatalog">
+              Смотреть меню
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                <path d="M12 5v14"></path>
+                <path d="m6 13 6 6 6-6"></path>
+              </svg>
+            </a>
+          </div>
         </div>
-        <div class="menu-hero-photo">
-          <img src="images/hero/menu-bakery.jpg" alt="Витрина пирожковой «Марфа и медведь»" width="900" height="1200">
+
+        <div class="menu-hero-visual">
+          <div class="menu-hero-photo">
+            <img src="images/hero/menu-bakery.jpg" alt="Витрина пирожковой «Марфа и медведь»" width="900" height="1200">
+          </div>
+
+          <span class="menu-hero-sticker" aria-hidden="true">
+            Сегодня<br>на витрине
+          </span>
         </div>
       </div>
     </section>
 
-    <section class="section section--paper">
+    <section class="section section--paper menu-catalog-section" id="menuCatalog">
       <div class="container">
         <div class="menu-toolbar">
+          <span class="menu-toolbar-label">Быстрый выбор</span>
+
           <div class="filters" aria-label="Фильтр каталога">
             <button class="filter-button" type="button" data-filter="all" aria-pressed="false">Всё</button>
             <button class="filter-button active" type="button" data-filter="pies" aria-pressed="true">Пирожки</button>
