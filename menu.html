@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="css/adaptive.css?v=14">
 <link rel="stylesheet" href="css/animation.css?v=12">
 
-  <link rel="stylesheet" href="css/menu.css?v=27">
+  <link rel="stylesheet" href="css/menu.css?v=28">
   <meta name="description" content="Меню пирожковой «Марфа и медведь»: пирожки, хлеб, сытные и сладкие пироги, торты.">
   <link rel="canonical" href="https://vittowin.github.io/marfa/menu.html">
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -127,6 +127,20 @@
             <button class="filter-button" type="button" data-filter="sweet-pies" aria-pressed="false">Сладкие пироги</button>
             <button class="filter-button" type="button" data-filter="cakes" aria-pressed="false">Торты</button>
           </div>
+
+          <label class="menu-search">
+            <input
+              id="menuSearch"
+              type="search"
+              placeholder="Найти выпечку"
+              aria-label="Поиск по меню"
+              autocomplete="off"
+            >
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="m16 16 4 4"></path>
+            </svg>
+          </label>
         </div>
 
         <div class="no-js-fallback">
@@ -136,6 +150,10 @@
 
         <p class="cake-note" id="cakeNote" hidden>
           На любой торт можно добавить поздравительную надпись - шоколадный медальончик с поздравительной надписью - 300 ₽
+        </p>
+
+        <p class="menu-no-results" id="menuNoResults" role="status" hidden>
+          По вашему запросу ничего не найдено. Попробуйте изменить название или выбрать другую категорию.
         </p>
 
         <div class="products-grid" id="productsGrid">
@@ -1906,7 +1924,7 @@
 
   <script src="js/app.js?v=13"></script>
   <script src="js/menu-data.js?v=19"></script>
-  <script src="js/menu.js?v=21"></script>
+  <script src="js/menu.js?v=22"></script>
   <script src="js/cart.js?v=20"></script>
 </body>
 </html>

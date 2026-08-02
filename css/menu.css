@@ -130,6 +130,7 @@
   position: relative;
   z-index: 3;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 22px;
   margin: -36px 0 34px;
@@ -149,8 +150,47 @@
 
 .filters {
   display: flex;
+  flex: 1 1 560px;
   flex-wrap: wrap;
   gap: 9px;
+}
+
+.menu-search {
+  position: relative;
+  flex: 1 1 230px;
+  max-width: 280px;
+  margin-left: auto;
+}
+
+.menu-search input {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 42px 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 999px;
+  color: var(--text);
+  background: var(--cream);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.menu-search input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.menu-search svg {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  width: 18px;
+  height: 18px;
+  color: var(--green);
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .no-js-fallback {
@@ -158,6 +198,7 @@
 }
 
 .no-js .filters,
+.no-js .menu-search,
 .no-js .header-cart,
 .no-js .product-cart-control {
   display: none;
@@ -202,6 +243,22 @@
 }
 
 .cake-note[hidden] {
+  display: none;
+}
+
+.menu-no-results {
+  margin: 0 0 28px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: var(--muted);
+  background: var(--sand);
+  font-size: 15px;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.menu-no-results[hidden] {
   display: none;
 }
 
@@ -811,6 +868,12 @@
   .menu-toolbar {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .menu-search {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
   }
 
   .products-grid {
