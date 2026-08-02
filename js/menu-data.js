@@ -21,7 +21,7 @@ const wheatPies = createCatalogSection([
   ["wheat-strawberry", "Пирожок с клубникой", 70, 70, null, "images/products/pies/pie-strawberry.jpg"],
   ["wheat-cherry", "Пирожок с вишней", 70, 70, null, "images/products/pies/pie-cherry.jpg"],
   ["wheat-blueberry", "Пирожок с черникой", 70, 70, null, "images/products/pies/pie-blueberry.jpg"],
-  ["wheat-raspberry", "Пирожок с малиной", 70, 70],
+  ["wheat-raspberry", "Пирожок с малиной", 70, 70, null, "images/products/pies/pie-raspberry.jpg"],
   ["wheat-lingonberry", "Пирожок с брусникой", 70, 70, null, "images/products/pies/pie-lingonberry.jpg"],
   ["wheat-apricot", "Пирожок с абрикосом", 70, 70, null, "images/products/pies/pie-apricot.jpg"],
   ["wheat-poppy-bun", "Булочка с маком", 80, 70, null, "images/products/pies/pie-poppy.jpg"],
@@ -44,19 +44,19 @@ const wheatPies = createCatalogSection([
 });
 
 const multigrainPies = createCatalogSection([
-  ["multigrain-cabbage", "Пирожок с капустой", 85, 70],
-  ["multigrain-apple", "Пирожок с яблоком", 80, 70, null, "images/products/pies/pie-apple.jpg"],
+  ["multigrain-cabbage", "Пирожок с капустой", 85, 70, null, "images/products/pies/pie-multigrain-cabbage.jpg"],
+  ["multigrain-apple", "Пирожок с яблоком", 80, 70, null, "images/products/pies/pie-multigrain-apple.jpg"],
   ["multigrain-blueberry", "Пирожок с черникой", 70, 70, null, "images/products/pies/pie-blueberry.jpg"],
-  ["multigrain-green-onion-rice", "Пирожок с зелёным луком и рисом", 70, 70],
+  ["multigrain-green-onion-rice", "Пирожок с зелёным луком и рисом", 70, 70, null, "images/products/pies/pie-multigrain-green-onion-rice.jpg"],
   ["multigrain-potato", "Пирожок с картошкой", 85, 70, null, "images/products/pies/pie-potato.jpg"],
-  ["multigrain-buckwheat-onion", "Пирожок с гречей и жареным луком", 85, 70],
+  ["multigrain-buckwheat-onion", "Пирожок с гречей и жареным луком", 85, 70, null, "images/products/pies/pie-multigrain-buckwheat-onion.jpg"],
   ["multigrain-beef-onion", "Пирожок с говядиной и жареным луком", 80, 80, null, "images/products/pies/pie-beef-onion.jpg"],
   ["multigrain-ham-cheese", "Пирожок с ветчиной и сыром", 80, 80, null, "images/products/pies/pie-ham-cheese.jpg"],
-  ["multigrain-apple-cherry", "Пирожок с яблоком и вишней", 80, 70],
+  ["multigrain-apple-cherry", "Пирожок с яблоком и вишней", 80, 70, null, "images/products/pies/pie-multigrain-apple-cherry.jpg"],
   ["multigrain-cottage-cheese", "Пирожок с творогом", 80, 70, null, "images/products/pies/pie-cottage-cheese.jpg"],
-  ["multigrain-vegetable", "Пирожок с овощами", 80, 70],
-  ["multigrain-carrot-apple", "Пирожок с морковью и яблоком", 85, 70],
-  ["multigrain-rice-lentils", "Пирожок с рисом и чечевицей", 85, 70]
+  ["multigrain-vegetable", "Пирожок с овощами", 80, 70, null, "images/products/pies/pie-multigrain-vegetable.jpg"],
+  ["multigrain-carrot-apple", "Пирожок с морковью и яблоком", 85, 70, null, "images/products/pies/pie-multigrain-carrot-apple.jpg"],
+  ["multigrain-rice-lentils", "Пирожок с рисом и чечевицей", 85, 70, null, "images/products/pies/pie-multigrain-rice-lentils.jpg"]
 ], {
   category: "pies",
   categoryLabel: "Многозерновая мука",
@@ -66,18 +66,18 @@ const multigrainPies = createCatalogSection([
 const breads = createCatalogSection([
   ["bread-wheat-rye-bran", "Хлеб пшенично-ржаной с отрубями", 280, 75, null, "images/products/bread/bread-wheat-rye-bran.jpg"],
   ["bread-gray", "Хлеб серый", 250, 75, null, "images/products/bread/bread-gray.jpg"],
-  ["bread-white-loaf", "Хлеб белый, буханка", 230, 75],
-  ["bread-white-round", "Хлеб белый круглый", 400, 75],
-  ["bread-white-round-small", "Хлеб белый круглый маленький", 180, 45],
-  ["bread-rye-yeast-free", "Хлеб ржаной бездрожжевой", 280, 80],
-  ["bread-country-yeast-free", "Хлеб деревенский бездрожжевой", 280, 80],
-  ["bread-wheat-sesame", "Хлеб пшеничный с кунжутом", 280, 75],
-  ["bread-vienna-milk", "Хлеб венский молочный", 250, 80],
-  ["bread-darnitsky", "Хлеб Дарницкий", 250, 80],
-  ["bread-ciabatta", "Чиабатта пшеничная", 200, 80],
-  ["bread-onion-baguette", "Багет луковый", 250, 80],
-  ["bread-carrot-beet-garlic-baguette", "Багет морковно-свекольный с чесноком", 250, 80],
-  ["bread-wheat-baton", "Батон пшеничный", 400, 80]
+  ["bread-white-loaf", "Хлеб белый, буханка", 230, 75, null, "images/products/bread/bread-white-loaf.jpg"],
+  ["bread-white-round", "Хлеб белый круглый", 400, 75, null, "images/products/bread/bread-white-round.jpg"],
+  ["bread-white-round-small", "Хлеб белый круглый маленький", 180, 45, null, "images/products/bread/bread-white-round-small.jpg"],
+  ["bread-rye-yeast-free", "Хлеб ржаной бездрожжевой", 280, 80, null, "images/products/bread/bread-rye-yeast-free.jpg"],
+  ["bread-country-yeast-free", "Хлеб деревенский бездрожжевой", 280, 80, null, "images/products/bread/bread-country-yeast-free.jpg"],
+  ["bread-wheat-sesame", "Хлеб пшеничный с кунжутом", 280, 75, null, "images/products/bread/bread-wheat-sesame.jpg"],
+  ["bread-vienna-milk", "Хлеб венский молочный", 250, 80, null, "images/products/bread/bread-vienna-milk.jpg"],
+  ["bread-darnitsky", "Хлеб Дарницкий", 250, 80, null, "images/products/bread/bread-darnitsky.jpg"],
+  ["bread-ciabatta", "Чиабатта пшеничная", 200, 80, null, "images/products/bread/bread-ciabatta.jpg"],
+  ["bread-onion-baguette", "Багет луковый", 250, 80, null, "images/products/bread/bread-onion-baguette.jpg"],
+  ["bread-carrot-beet-garlic-baguette", "Багет морковно-свекольный с чесноком", 250, 80, null, "images/products/bread/bread-carrot-beet-garlic-baguette.jpg"],
+  ["bread-wheat-baton", "Батон пшеничный", 400, 80, null, "images/products/bread/bread-wheat-baton.jpg"]
 ], {
   category: "bread",
   categoryLabel: "Хлеб",
