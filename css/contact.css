@@ -72,23 +72,6 @@
   line-height: 1.65;
 }
 
-.contacts-hero-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 22px;
-  margin-top: 24px;
-}
-
-.contacts-hero-meta span {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--green);
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.contacts-hero-meta svg,
 .contacts-hero-actions svg {
   flex: 0 0 auto;
   width: 18px;
@@ -367,12 +350,6 @@
   .contacts-hero-lead {
     margin-top: 20px;
     font-size: 15px;
-  }
-
-  .contacts-hero-meta {
-    display: grid;
-    gap: 12px;
-    margin-top: 20px;
   }
 
   .contacts-hero-actions {
