@@ -107,26 +107,8 @@
   background: linear-gradient(90deg, rgba(241, 223, 196, 0.22), transparent 42%);
 }
 
-.contacts-hero-sticker {
-  position: absolute;
-  right: 0;
+.contacts-hero-note {
   bottom: 0;
-  display: grid;
-  place-items: center;
-  width: 118px;
-  height: 118px;
-  padding: 12px;
-  border: 5px solid rgba(255, 249, 239, 0.82);
-  border-radius: 50%;
-  color: #ffffff;
-  background: var(--orange);
-  box-shadow: 0 14px 32px rgba(184, 91, 45, 0.25);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.2;
-  text-align: center;
-  transform: rotate(-7deg);
 }
 
 .delivery-hero-grid {
@@ -521,13 +503,6 @@
     width: 100%;
   }
 
-  .contacts-hero-sticker {
-    width: 104px;
-    height: 104px;
-    border-width: 4px;
-    font-size: 12px;
-  }
-
   .contact-item {
     grid-template-columns: 82px minmax(0, 1fr);
     column-gap: 12px;
@@ -573,13 +548,6 @@
   .contacts-hero-photo {
     margin-bottom: 0;
     border-radius: 30% 10% 30% 10%;
-  }
-
-  .contacts-hero-sticker {
-    width: 92px;
-    height: 92px;
-    padding: 8px;
-    font-size: 11px;
   }
 
   .contact-item {
