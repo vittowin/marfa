@@ -152,12 +152,10 @@
     grid-template-columns: 1fr;
   }
 
-  .logo-copy strong {
-    font-size: 17px;
-  }
-
-  .logo-copy small {
-    display: none;
+  .logo-image {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
   }
 
   .footer-grid {
@@ -166,5 +164,13 @@
 
   .footer-links {
     justify-content: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .logo-image {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
   }
 }

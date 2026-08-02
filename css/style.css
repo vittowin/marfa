@@ -209,70 +209,15 @@ h2 {
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
   flex-shrink: 0;
 }
 
-.logo-mark {
-  position: relative;
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  color: #ffffff;
-  background: var(--green);
-  border-radius: 16px 16px 20px 20px;
-  box-shadow: 0 10px 22px rgba(40, 69, 54, 0.25);
-  transform: rotate(-3deg);
-}
-
-.logo-mark::before,
-.logo-mark::after {
-  content: "";
-  position: absolute;
-  top: -5px;
-  width: 14px;
-  height: 14px;
-  background: var(--green);
-  border-radius: 50% 50% 4px 4px;
-}
-
-.logo-mark::before {
-  left: 7px;
-  transform: rotate(-16deg);
-}
-
-.logo-mark::after {
-  right: 7px;
-  transform: rotate(16deg);
-}
-
-.logo-mark span {
-  position: relative;
-  z-index: 2;
-  font-family: Georgia, serif;
-  font-size: 26px;
-  font-weight: 700;
-}
-
-.logo-copy strong,
-.logo-copy small {
+.logo-image {
   display: block;
-}
-
-.logo-copy strong {
-  color: var(--green);
-  font-family: Georgia, serif;
-  font-size: 20px;
-}
-
-.logo-copy small {
-  margin-top: 4px;
-  color: var(--muted);
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: 18px;
 }
 
 .main-nav {
