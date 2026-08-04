@@ -119,13 +119,6 @@
   box-shadow: 0 18px 38px rgba(40, 69, 54, 0.22);
 }
 
-.menu-toolbar-label {
-  flex: 0 0 auto;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 18px;
-  font-weight: 700;
-}
-
 .filters {
   display: flex;
   flex: 1 1 560px;
@@ -934,10 +927,6 @@
     background: rgba(40, 69, 54, 0.97);
     box-shadow: 0 12px 28px rgba(40, 69, 54, 0.2);
     backdrop-filter: blur(12px);
-  }
-
-  .menu-toolbar-label {
-    font-size: 16px;
   }
 
   .filters {
